@@ -1,0 +1,61 @@
+<!-- Det er oprinnelig 20 errors/warnings når man tar html gjennom validator check -->
+<!DOCTYPE html>
+<!-- 1. Doctype manglet, så starter med å legge det inn -->
+<html lang="en">
+<!-- 2 Språket til siden var ikke lagt inn, så rettet opp i det -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Web eksamen del 1</title>
+    </head>
+<!-- 3. Når man tar hensyn til semantisk struktur vil head høre til utenfor body--> 
+<!-- 4. Meta charset var ikke lagt inn -->
+<!-- 5. Det manglet et " ved style.css -->
+            <body>
+                <nav>
+                    <h2>Logo</h2>
+                        <ul>
+                            <li> <a href="#">Boatswain schooner</a></li>
+                            <li> <a href="#">Account lookout</a></li>
+                            <li> <a href="#">Sail ho shrouds</a></li>
+                        </ul>
+<!-- 6. Brukte ul for å rydde opp i lesten med anker, slik at det ble som eksempelet i oppgava -->
+                </nav>
+                    <header>
+                        <h1>Yar Pirate Ipsum</h1>
+<!-- 8.. Endret alle overskriftene untatt <h1>Logo</h1> til h2-format. -->
+                        <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. 
+                        Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl.</p>
+                        <a class="button" href="#">Les mer</a>
+<!-- 10. Fylte onn href="#" for å få en fungerende button. -->
+                    </header>
+                <main>
+<!-- 9. skrev inn main istedenfor div of fikk in en > som manglet. -->
+                    <article>
+                        <h2>Prow scuttle</h2>
+                        <p>Deadlights jack lad schooner scallywag dance the hempen 
+                            jig carouser broadside cable strike colors.</p>
+                        <a href="#">Les mer</a>
+                    </article>
+<!-- 7. Fikk lagt enden på <article> med </article> og fikk vekk feilmeldingen. -->
+                    <article>
+                        <h2>Jack Tar transom</h2>
+                        <p>Deadlights jack lad schooner scallywag dance the hempen 
+                            jig carouser broadside cable strike colors.</p>
+                        <a href="#">Les mer</a>
+                    </article>
+                    <article>
+                        <h2>Trysail Sail</h2>
+                        <p>Deadlights jack lad schooner scallywag dance the hempen 
+                            jig carouser broadside cable strike colors.</p>
+                        <a href="#">Les mer</a>
+                    </article>
+                </main>
+                <footer>
+                    <span>Twitter</span>
+                    <span>Facebook</span>
+                    <span>Instagram</span>
+                </footer>    
+            </body>
+</html>

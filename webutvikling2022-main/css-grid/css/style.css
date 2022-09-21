@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;1,100&family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,500&display=swap');
+/*Her stoppet vi i forelesningen*/
+/**/
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#front-page-container{
+    display: grid;
+    grid-template-areas:"header" 
+                        "main"
+                        "aside" 
+                        "footer";
+    grid-template-columns: 1fr;
+
+}
+
+header{
+    grid-area: header;
+}
+
+#main-menu{
+    position: absolute;
+    top: 100px;
+/*fikler i undersøk på nettside, for å finne riktig verdi*/
+    left: 0;
+    background-color: #2f2f2f;
+    width: 100%;
+    padding: 1rem;
+}
+
+#main-menu li{
+    list-style: none;
+/*for å slippe pinktene foran lista*/
+
+}
+
+#main-menu a{
+    color: #fff;
+    padding: 1rem;
+/*inline gjennom a, som gjør at det ikke blir endring gjennom a'*/
+    display: inline-block;
+/*inline-blok overkjører hvis vi vil ha dette vekk i pc-modus*/
+    font-size: 1.3rem;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+header nav a{
+    color:#000;
+    text-decoration: none;
+}
+
+header nav ul li a:hover{
+    text-decoration: underline;
+}
+
+nav{
+    overflow: auto;
+    background-color: #d2dfe1;
+    padding: 2rem;
+/*neste 3 linjer endrer hvilken side hamburgermeny ligger*/
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+main article{
+    /*endret vidde bredde fra hva vi gjorde 05.08*/
+    /* max-width: 250px;
+    width: 100%; */
+    flex-basis: 250px;
+    flex-grow: 1;
+    border: 1px solid #d9d9d9;
+    padding: 1rem;
+}
+
+/*la til bredcrumbs og fjernet default CSSS på ul elementet med id breadcrumbs*/
+#breadcrumbs{
+    padding: 0;
+    margin: 0;
+}
+
+
+#breadcrumbs li::after{
+    content: ">";
+    margin: 0 0.2rem;
+}
+#breadcrumbs li:last-child:after{
+    content: "";
+    margin: 0 0.2rem;
+}
+#breadcrumbs li:last-child{
+    font-weight: 900;;
+}
+/*legge til en active-page id på meny punktet som er landingssiden*/
+
+#active{
+
+}
+/*for å få det under til å funke så må du sette en klasse som du kaller "button" på <a> som ligger i artikklene*/
+.button {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #d2dfe1;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .button:hover {
+    background-color: #2f2f2f;
+    color: #fff;
+  }
+
+  .button:active {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #a53f55;
+    text-decoration: none;
+    color: #fff;
+  }
+
+article img{
+    /*Det er ikke optimalt å gjøre et mindre bilde større på denne måten, men dette er ment til øving så det er greit!*/
+    width: 100%;
+}
+
+
+footer{
+    background-color: rgb(80, 80, 80);
+    color: #fff;
+    padding: 3rem 2rem;
+}
+
+/* . når det er class, kan ikke ha mellomrom */
+.fa-brands.fa-github{
+    font-size: 30px;
+    margin: 0 0.5rem;
+    color: #983e5f;
+}
+
+/* nå endrer iconet farge når museviser er over */
+.fa-brands.fa-github:hover{
+    color: rgb(10, 77, 77);
+}
+
+@media only screen and (min-width: 900px){
+    /* Dette gjelder for pc-skjerm */
+    #front-page-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "header header header" 
+                            "main main aside" 
+                            "footer footer footer";
+        grid-gap: 1rem;
+        grid-row-gap: 1rem;
+    
+    }
+
+    header nav{
+        display: flex;
+        /* centre på bilde, baseline på text */
+        align-items: baseline;
+        justify-content: space-between;
+        /* justify-content: center; hvis du vil legge ting på midten */
+    }
+
+    #main-menu{
+/*ikke bruk importente uten god grunn*/
+        display: block !important;
+/*static er egentlig default*/
+        position: static;
+        background-color: transparent;
+        width: fit-content;
+    }
+
+    #main-menu a{
+        color: #000;
+    }
+
+    #main-menu li{
+        display: inline-block;
+        /* 0 først for å si at top og bunn er 0 */
+        margin: 0 1rem;
+    }
+
+    #ham-icon{
+        display: none;
+    }
+}
+
