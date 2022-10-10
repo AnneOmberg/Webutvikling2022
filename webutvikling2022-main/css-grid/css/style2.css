@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'mukta',sans-serif;
+    background: rgb(3, 34, 73);
+}
+
+#front-page-container{
+    display: grid;
+    grid-template-areas: "header""main""aside""footer";
+}

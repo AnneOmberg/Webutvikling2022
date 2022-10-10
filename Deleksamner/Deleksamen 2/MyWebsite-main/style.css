@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700&display=swap');
 
-@media screen and (min-width: 300px){
+*{
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px){
     #front-page-container {
         display: grid;
         grid-template-areas: 
@@ -8,7 +12,9 @@
                         'main'
                         'aside'
                         'footer';
-        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 5fr 3fr 1fr;
+        width: 1fr;
     }
     #innhold-page-container {
         display: grid;
@@ -19,15 +25,22 @@
                         'footer';
         width: 100%;
     }
+
+    header{
+        display: grid;
+        grid-template-areas: "header";
+    }
+
+    nav{
+        display: grid;
+        grid-template-areas: "header";
+    }
+
     h1 {
         font-size: 2rem;
         
     }
 
-    header {
-        display: grid;
-        grid-area: header;
-    }
     main {
         display: grid;
         grid-area: main;
@@ -43,25 +56,28 @@
         grid-area: footer;
     }
 }
-/* *{
-    box-sizing: border-box;
-} */
-@media screen and (min-width: 900px) {
+
+
+
+/* @media screen and (min-width: 900px) { */
 body {
     background: rgb(3, 34, 73);
     margin: 0;
     font-family: 'mukta', sans-serif;
 }
 
+@media screen and (min-width: 900px) {
 #front-page-container{
     display: grid;
     grid-template-areas:"header header" 
                         "main aside"
                         "footer footer";
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 8fr 1fr;
+    /* grid-template-rows: 1fr 8fr 1fr; */
+}
 }
 
+@media screen and (min-width: 900px){
 nav{
     background: rgb(142, 173, 204);
     max-height: 40%;
@@ -69,11 +85,12 @@ nav{
     position: absolute;    
 }
 
+
+
 #navImg {
     margin-top: 1rem;
     margin-left: 1rem;
-    width: 15%;
-    max-width: 120px;    
+    max-width: 5%;    
 }
 
 nav ul{
@@ -86,7 +103,7 @@ nav ul{
 }
 
 nav ul li{
-    width: 6rem;
+    width: 8rem;
     height: 2rem;
 }
 
@@ -97,6 +114,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color:rgb(3, 34, 73);
+}
 }
 
 header {
@@ -216,8 +234,4 @@ footer ul li a:hover {
     position: relative;
     margin-top: 5rem;
 }
-}
 
-/* @media screen and (max-width: 500px) {
-    .left, .main, .right {
-      width: 100%; */
